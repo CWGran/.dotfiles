@@ -1,0 +1,69 @@
+#!/bin/bash
+# Script to easily cd to the correct Skole-folder
+
+skole="/home/christoffer/Skole/"
+
+if [ $# -ge 1 ]
+then
+    if [ $1 = "_" ]
+    then
+        skole=$(ls -td $skole*/ | head -1)
+    elif [ $1 = "help" ]
+    then
+        echo "Alle felter er valgfrie, nyeste år og semester blir valgt dersom det ikke er spesifisert"
+        echo "Utelat fagnr. for å se alternativer"
+        echo "skole [år] [semester] [fagnr.]"
+        exit 0
+    else
+        skole+=$1"/"
+    fi
+else
+    skole=$(ls -td $skole*/ | head -1)
+fi
+
+if [ $# -ge 2 ]
+then
+    if [ $2 = "_" ]
+    then
+        skole=$(ls -td $skole*/ | head -1)
+    else
+        skole+=$2"/"
+    fi
+else
+    skole=$(ls -td $skole*/ | head -1)
+fi
+
+if [ $# -ge 3 ]
+then
+    if [ $3 = "_" ]
+    then
+        i=1
+        for f in $(ls $skole)
+        do
+            echo "$i. $f"
+            ((i++))
+        done
+
+        echo "Velg fag:"
+
+        read fag
+    else
+        fag=$3
+    fi
+else
+    i=1
+    for f in $(ls $skole)
+    do
+        echo "$i. $f"
+        ((i++))
+    done
+
+    echo "Velg fag:"
+
+    read fag
+fi
+
+skole+=$(ls $skole | sed -n "$fag"p)
+
+echo "Går til $skole"
+cd $skole

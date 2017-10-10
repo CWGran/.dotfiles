@@ -1,0 +1,18 @@
+#!/bin/bash
+# Shorter skole-script
+
+skole="/home/christoffer/Skole/" 
+skole=$(ls -td $skole*/ | head -1)
+skole=$(ls -td $skole*/ | head -1)
+
+if [ $# -eq 0 ]
+then
+    i=1
+    for f in $(ls $skole) 
+    do
+        echo "$i. $f"
+        ((i++))
+    done
+else
+    . skole _ _ $1
+fi
