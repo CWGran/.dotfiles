@@ -7,26 +7,26 @@
 
 DOTDIR="$HOME/.dotfiles"
 
-echo "$DOTDIR"
+echo "Setting up dotfiles..."
 
 # i3config
-echo "Copying i3config"
+echo "Installing i3config..."
 ln -sf $DOTDIR/i3config ~/.config/i3/config
 
 # vimrc
-echo "Copying vimrc"
+echo "Installing vimrc..."
 ln -sf $DOTDIR/.vimrc ~/.vimrc
 
 # random scripts
-echo "Copying random scripts"
+echo "Installing random scripts..."
 
 SCRIPTDIR=$DOTDIR"/scripts"
 
 for file in $(ls scripts)
 do
-    echo "Copying $file"
+    echo "Installing $file..."
     ln -sf $SCRIPTDIR/$file ~/bin/$file
 done
 
 
-echo "Finished"
+echo "Finished installing dotfiles"
