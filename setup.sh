@@ -13,6 +13,10 @@ echo "Setting up dotfiles..."
 echo "Installing i3config..."
 ln -sf $DOTDIR/i3config ~/.config/i3/config
 
+# Xresources, for rofi
+echo "Installing Xresources"
+ln -sf $DOTDIR/.Xresources ~/.Xresources
+
 # vimrc
 echo "Installing vimrc..."
 ln -sf $DOTDIR/.vimrc ~/.vimrc
