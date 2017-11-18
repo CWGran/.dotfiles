@@ -13,6 +13,14 @@ echo "Setting up dotfiles..."
 echo "Installing i3config..."
 ln -sf $DOTDIR/i3config ~/.config/i3/config
 
+# i3status
+echo "Installing i3status..."
+ln -sf $DOTDIR/i3status.conf /etc/i3status.conf
+
+# bgscript
+echo "Installing bgscript"
+ln -sf $DOTDIR/.fehbg ~/.fehbg
+
 # Xresources, for rofi
 echo "Installing Xresources"
 ln -sf $DOTDIR/.Xresources ~/.Xresources
