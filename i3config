@@ -222,7 +222,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Lock PC
-bindsym XF86Sleep exec xtrlock
+#bindsym XF86Sleep exec xtrlock
+bindsym XF86Sleep exec lock_screen
 
 # Autostart programs on launch
 #exec --no-startup-id i3-msg 'workspace 1; exec /opt/google/chrome/google-chrome'	# Autostart google chrome in workspace 1
@@ -236,5 +237,3 @@ exec sh ~/.fehbg
 
 # Screenshot 
 bindsym Print exec scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png
-
-# Swap esc and caps
