@@ -1,2 +1,2 @@
 #!/bin/bash
-synclient VertScrollDelta=-107 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-107
+synclient VertScrollDelta=-30 VertEdgeScroll=0 HorizTwoFingerScroll=1 HorizScrollDelta=-30

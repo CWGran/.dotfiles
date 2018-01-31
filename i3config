@@ -198,7 +198,7 @@ bar {
 #################################################################################
 
 # Fix touchpad on launch
-exec ~/fix_touch.sh
+exec fix_touch.sh
 
 # Start np-applet for easier wifi management
 exec --no-startup-id nm-applet
@@ -212,8 +212,8 @@ bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -223,7 +223,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Lock PC
 #bindsym XF86Sleep exec xtrlock
-bindsym XF86Sleep exec lock_screen
+#bindsym XF86Sleep exec lock_screen
 
 # Autostart programs on launch
 #exec --no-startup-id i3-msg 'workspace 1; exec /opt/google/chrome/google-chrome'	# Autostart google chrome in workspace 1
@@ -237,3 +237,7 @@ exec sh ~/.fehbg
 
 # Screenshot 
 bindsym Print exec scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png
+
+# Swap esc and caps
+
+exec /usr/bin/setxkbmap -option "caps:swapescape"
