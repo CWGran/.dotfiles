@@ -17,6 +17,10 @@ ln -sf $DOTDIR/i3config ~/.config/i3/config
 echo "Installing i3status..."
 ln -sf $DOTDIR/i3status.conf /etc/i3status.conf
 
+# compton.conf
+echo "Installing compton..."
+ln -sf $DOTDIR/compton.conf ~/.config/compton.conf
+
 # bgscript
 echo "Installing bgscript"
 ln -sf $DOTDIR/.fehbg ~/.fehbg
