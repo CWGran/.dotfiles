@@ -198,7 +198,7 @@ bar {
 #################################################################################
 
 # Fix touchpad on launch
-exec ~/.myscripts/fix_touch.sh
+exec ~/fix_touch.sh
 
 # Start np-applet for easier wifi management
 exec --no-startup-id nm-applet
