@@ -99,28 +99,29 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1:
+#bindsym $mod+2 workspace 2:
+bindsym $mod+2 workspace 2:
+bindsym $mod+3 workspace 3:
+bindsym $mod+4 workspace 4:4
+bindsym $mod+5 workspace 5:5
+bindsym $mod+6 workspace 6:6
+bindsym $mod+7 workspace 7:7
+bindsym $mod+8 workspace 8:8
+bindsym $mod+9 workspace 9:
+bindsym $mod+0 workspace 10:
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1:
+bindsym $mod+Shift+2 move container to workspace 2:
+bindsym $mod+Shift+3 move container to workspace 3:
+bindsym $mod+Shift+4 move container to workspace 4:4
+bindsym $mod+Shift+5 move container to workspace 5:5
+bindsym $mod+Shift+6 move container to workspace 6:6
+bindsym $mod+Shift+7 move container to workspace 7:7
+bindsym $mod+Shift+8 move container to workspace 8:8
+bindsym $mod+Shift+9 move container to workspace 9:
+bindsym $mod+Shift+0 move container to workspace 10:
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -172,7 +173,9 @@ set $bgurgent  #BF0F93
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command i3status | ~/i3status/i3spotifystatus/pystatus.py
+        #status_command i3blocks
         tray_output primary
         colors{
             background      $bgcol
@@ -188,6 +191,8 @@ bar {
             inactive_workspace  $bgcol      $bgcol      $txtcol
             urgent_workspace    $bgurgent   $bgurgent   $txtcol
         }
+        font pango:DejaVu Sans Mono, Awesome 8
+        strip_workspace_numbers yes
 }
 #exec polybar main_bar
 
@@ -223,14 +228,16 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Lock PC
 #bindsym XF86Sleep exec xtrlock
-#bindsym XF86Sleep exec lock_screen
+bindsym $mod+Mod1+l exec lock_screen
 
-# Autostart programs on launch
-#exec --no-startup-id i3-msg 'workspace 1; exec /opt/google/chrome/google-chrome'	# Autostart google chrome in workspace 1
-#exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/layouts/defaultw1.json'
-#exec --no-startup-id i3-msg 'workspace 2; append_layout ~/.config/i3/layouts/defaultw2.json'
-#exec --no-startup-id i3-msg 'workspace 3; append_layout ~/.config/i3/layouts/defaultw3.json'
-#exec --no-startup-id i3-msg 'workspace 10; append_layout ~/.config/i3/layouts/defaultw10.json'
+# Assign workspaces to programs
+for_window [title="Spotify"] move to workspace 9:
+for_window [class="Slack"] move to workspace 10:
+
+exec --no-startup-id google-chrome
+exec --no-startup-id spotify
+exec --no-startup-id slack
+
 
 # Set wallpaper
 exec sh ~/.fehbg

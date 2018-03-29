@@ -33,6 +33,10 @@ ln -sf $DOTDIR/.Xresources ~/.Xresources
 echo "Installing vimrc..."
 ln -sf $DOTDIR/.vimrc ~/.vimrc
 
+#dunstrc
+echo "Installing dunstrc..."
+ln -sf $DOTDIR/dunstrc ~/.config/dunst/dunstrc
+
 # random scripts
 echo "Installing random scripts..."
 
