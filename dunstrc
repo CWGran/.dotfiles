@@ -10,7 +10,7 @@
     ignore_newline = no
     geometry = "300x5-30+20"
     transparency = 0
-    idle_threshold = 120
+    idle_threshold = 0
     monitor = 0
     follow = mouse
     sticky_history = yes
@@ -21,7 +21,7 @@
     separator_color = frame
     startup_notification = false
     dmenu = /usr/bin/dmenu -p dunst
-    browser = /usr/bin/firefox -new-tab
+    browser = /opt/google/chrome/google-chrome 
 
 [frame]
     width = 1

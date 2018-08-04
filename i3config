@@ -107,9 +107,9 @@ bindsym $mod+4 workspace 4:4
 bindsym $mod+5 workspace 5:5
 bindsym $mod+6 workspace 6:6
 bindsym $mod+7 workspace 7:7
-bindsym $mod+8 workspace 8:8
+bindsym $mod+8 workspace 8:
 bindsym $mod+9 workspace 9:
-bindsym $mod+0 workspace 10:
+bindsym $mod+0 workspace 10:
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1:
@@ -119,9 +119,9 @@ bindsym $mod+Shift+4 move container to workspace 4:4
 bindsym $mod+Shift+5 move container to workspace 5:5
 bindsym $mod+Shift+6 move container to workspace 6:6
 bindsym $mod+Shift+7 move container to workspace 7:7
-bindsym $mod+Shift+8 move container to workspace 8:8
+bindsym $mod+Shift+8 move container to workspace 8:
 bindsym $mod+Shift+9 move container to workspace 9:
-bindsym $mod+Shift+0 move container to workspace 10:
+bindsym $mod+Shift+0 move container to workspace 10:
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -177,6 +177,7 @@ bar {
         status_command i3status | ~/i3status/i3spotifystatus/pystatus.py
         #status_command i3blocks
         tray_output primary
+        separator_symbol "|"
         colors{
             background      $bgcol
             statusline      $txtcol
@@ -191,7 +192,7 @@ bar {
             inactive_workspace  $bgcol      $bgcol      $txtcol
             urgent_workspace    $bgurgent   $bgurgent   $txtcol
         }
-        font pango:DejaVu Sans Mono, Awesome 8
+        font pango:DejaVu Sans Mono, FontAwesome5Free 9
         strip_workspace_numbers yes
 }
 #exec polybar main_bar
@@ -230,14 +231,20 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86Sleep exec xtrlock
 bindsym $mod+Mod1+l exec lock_screen
 
-# Assign workspaces to programs
-for_window [title="Spotify"] move to workspace 9:
-for_window [class="Slack"] move to workspace 10:
+# Apply layouts
+exec --no-startup-id "i3-msg 'workspace 8:; append_layout ~/.dotfiles/layouts/steam-ws.json';"
 
+# Assign workspaces to programs
+for_window [class="Steam"] move to workspace 8:
+for_window [title="Spotify"] move to workspace 9:
+for_window [class="Slack"] move to workspace 10:
+
+# Start default programs
+exec --no-startup-id "i3-msg 'workspace 1:'"
 exec --no-startup-id google-chrome
 exec --no-startup-id spotify
+exec --no-startup-id steam
 exec --no-startup-id slack
-
 
 # Set wallpaper
 exec sh ~/.fehbg

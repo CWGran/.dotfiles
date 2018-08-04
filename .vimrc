@@ -57,3 +57,14 @@ map <Leader>d :bn\|bd #<cr>
 
 " list
 nnoremap    <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
+
+" Change jk
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+nnoremap gj j
+nnoremap gk k
+vnoremap gj j
+vnoremap gk k
