@@ -1,0 +1,36 @@
+// vim:ts=4:sw=4:et
+{
+    // floating_con with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 900,
+       "width": 1562,
+       "x": 268,
+       "y": 50
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 1,
+            "floating": "user_on",
+            "geometry": {
+               "height": 900,
+               "width": 1300,
+               "x": 4294967054,
+               "y": 0
+            },
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^net\\-runelite\\-client\\-RuneLite$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

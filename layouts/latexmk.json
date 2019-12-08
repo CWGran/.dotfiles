@@ -1,0 +1,86 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1058,
+       "width": 1918,
+       "x": 1,
+       "y": 1
+    },
+    "name": "master.pdf",
+    "percent": 0.7,
+    "swallows": [
+       {
+        "class": "^Evince$"
+       // "instance": "^evince$",
+       // "title": "^master\\.pdf$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 338,
+                       "width": 572,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "christoffer@christoffer-xps: ~/Skole/2019/var/master/Masteroppgave",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                        "class": "^Termite$"
+                       // "instance": "^termite$",
+                       // "title": "^christoffer\\@christoffer\\-xps\\:\\ \\~\\/Skole\\/2019\\/var\\/master\\/Masteroppgave$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 338,
+               "width": 572,
+               "x": 0,
+               "y": 0
+            },
+            "name": "christoffer@christoffer-xps: ~/.dotfiles",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Termite$"
+               // "instance": "^termite$",
+               // "title": "^christoffer\\@christoffer\\-xps\\:\\ \\~\\/\\.dotfiles$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

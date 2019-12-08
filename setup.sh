@@ -33,9 +33,13 @@ ln -sf $DOTDIR/.Xresources ~/.Xresources
 echo "Installing vimrc..."
 ln -sf $DOTDIR/.vimrc ~/.vimrc
 
-#dunstrc
+# dunstrc
 echo "Installing dunstrc..."
 ln -sf $DOTDIR/dunstrc ~/.config/dunst/dunstrc
+
+# latexmk
+echo "Installing latexmkrc"
+ln -sf $DOTDIR/.latexmkrc ~/.latexmkrc
 
 # random scripts
 echo "Installing random scripts..."
@@ -48,5 +52,7 @@ do
     ln -sf $SCRIPTDIR/$file ~/bin/$file
 done
 
+echo "Custom copy for runelite"
+ln -sf $SCRIPTDIR/runelite /opt/runelite/runelite
 
 echo "Finished installing dotfiles"
